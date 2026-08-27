@@ -1,0 +1,3 @@
+﻿Make sendEmailNotification robust: support legacy signature and skip external POST during local build
+
+Co-authored-by: Copilot App <223556219+Copilot@users.noreply.github.com>

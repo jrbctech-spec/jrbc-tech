@@ -1,0 +1,3 @@
+﻿Fix server-side fetch URL in emailService (use absolute URL via NEXT_PUBLIC_APP_URL or VERCEL_URL)
+
+Co-authored-by: Copilot App <223556219+Copilot@users.noreply.github.com>
