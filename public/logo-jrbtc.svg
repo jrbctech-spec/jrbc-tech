@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cyberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <linearGradient id="neonGlow" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Shield / Hexagon -->
+  <rect width="512" height="512" rx="110" fill="#070c1d" />
+  <rect width="496" height="496" x="8" y="8" rx="102" fill="none" stroke="url(#cyberGrad)" stroke-width="4" opacity="0.4" />
+
+  <!-- Shield Geometry -->
+  <path d="M256 64 L400 130 V260 C400 350 256 430 256 430 C256 430 112 350 112 260 V130 Z" fill="#0f172a" stroke="url(#cyberGrad)" stroke-width="8" />
+
+  <!-- Circuit Network Lines -->
+  <line x1="256" y1="140" x2="256" y2="220" stroke="#38bdf8" stroke-width="6" stroke-linecap="round" />
+  <line x1="256" y1="220" x2="190" y2="280" stroke="#38bdf8" stroke-width="6" stroke-linecap="round" />
+  <line x1="256" y1="220" x2="322" y2="280" stroke="#38bdf8" stroke-width="6" stroke-linecap="round" />
+  
+  <line x1="190" y1="280" x2="190" y2="340" stroke="#06b6d4" stroke-width="5" stroke-linecap="round" />
+  <line x1="322" y1="280" x2="322" y2="340" stroke="#06b6d4" stroke-width="5" stroke-linecap="round" />
+
+  <!-- Circuit Nodes -->
+  <circle cx="256" cy="140" r="14" fill="#0ea5e9" filter="url(#glow)" />
+  <circle cx="256" cy="220" r="18" fill="#38bdf8" filter="url(#glow)" />
+  <circle cx="190" cy="280" r="14" fill="#06b6d4" filter="url(#glow)" />
+  <circle cx="322" cy="280" r="14" fill="#06b6d4" filter="url(#glow)" />
+  <circle cx="190" cy="340" r="12" fill="#3b82f6" />
+  <circle cx="322" cy="340" r="12" fill="#3b82f6" />
+
+  <!-- Tech Core Lettering / Brand Icon -->
+  <path d="M220 220 L292 220" stroke="#ffffff" stroke-width="6" stroke-linecap="round" />
+  <path d="M256 185 L256 255" stroke="#ffffff" stroke-width="6" stroke-linecap="round" />
+</svg>

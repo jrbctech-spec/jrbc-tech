@@ -1,0 +1,32 @@
+{
+  "name": "JRBTC-TECH Chamados TI",
+  "short_name": "JRBTC-TECH",
+  "description": "Sistema de Gestão de Chamados Técnicos de TI e Service Desk JRBTC-TECH",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070c1d",
+  "theme_color": "#0ea5e9",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo-jrbtc.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Abrir Chamado",
+      "short_name": "Novo Chamado",
+      "url": "/chamados/novo",
+      "icons": [{ "src": "/logo-jrbtc.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Meus Chamados",
+      "short_name": "Chamados",
+      "url": "/chamados",
+      "icons": [{ "src": "/logo-jrbtc.svg", "sizes": "192x192" }]
+    }
+  ]
+}
