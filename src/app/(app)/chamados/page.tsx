@@ -19,7 +19,7 @@ export default function ChamadosPage() {
   const { getFilteredChamados } = useTickets();
   const { role } = useAuth();
   const [viewMode, setViewMode] = useState<'kanban' | 'table'>('kanban');
-  const [activeTab, setActiveTab] = useState<'ALL' | 'OPEN' | 'PROGRESS' | 'DONE'>('ALL');
+  const [activeTab, setActiveTab] = useState<'ALL' | 'OPEN' | 'PROGRESS' | 'PENDING' | 'DONE'>('ALL');
 
   const allChamados = getFilteredChamados();
 
