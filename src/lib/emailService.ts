@@ -129,12 +129,33 @@ export function generateTicketClosedEmailHtml(chamado: Chamado, cliente?: Client
 }
 
 // Função de disparo para API interna
-export async function sendEmailNotification(payload: SendEmailPayload) {
+export async function sendEmailNotification(payloadOrTipo: SendEmailPayload | string, chamadoArg?: Chamado, toArg?: string) {
   try {
+    // Normalize legacy call signature: (tipo, chamado, to)
+    let payload: SendEmailPayload;
+    if (typeof payloadOrTipo === 'string') {
+      payload = {
+        to: toArg || 'jrbctech@gmail.com',
+        subject: payloadOrTipo === 'CONCLUSAO_CHAMADO' ? 'Ordem de Serviço Concluída' : 'Notificação JRBTC-TECH',
+        tipo: payloadOrTipo === 'CONCLUSAO_CHAMADO' ? 'CONCLUSAO_CHAMADO' : (payloadOrTipo === 'NOVO_CHAMADO' ? 'ABERTURA_CHAMADO' : 'NOVO_COMENTARIO'),
+        chamado: chamadoArg as Chamado,
+        cliente: undefined,
+        solicitante: undefined,
+      } as SendEmailPayload;
+    } else {
+      payload = payloadOrTipo;
+    }
+
     // Server-side fetch (during build) requires an absolute URL.
     // Use NEXT_PUBLIC_APP_URL when available, otherwise VERCEL_URL or localhost.
     const base = process.env.NEXT_PUBLIC_APP_URL
       || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000');
+    // If base is localhost and no server is running during build, skip external HTTP to avoid ECONNREFUSED.
+    if (base.startsWith('http://localhost')) {
+      console.log('[emailService] Skipping email dispatch during local build (no app server):', payload.tipo);
+      return { success: true, skipped: true };
+    }
+
     const url = new URL('/api/send-email', base).toString();
 
     const res = await fetch(url, {
