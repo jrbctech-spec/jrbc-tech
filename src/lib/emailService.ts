@@ -131,7 +131,13 @@ export function generateTicketClosedEmailHtml(chamado: Chamado, cliente?: Client
 // Função de disparo para API interna
 export async function sendEmailNotification(payload: SendEmailPayload) {
   try {
-    const res = await fetch('/api/send-email', {
+    // Server-side fetch (during build) requires an absolute URL.
+    // Use NEXT_PUBLIC_APP_URL when available, otherwise VERCEL_URL or localhost.
+    const base = process.env.NEXT_PUBLIC_APP_URL
+      || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000');
+    const url = new URL('/api/send-email', base).toString();
+
+    const res = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
