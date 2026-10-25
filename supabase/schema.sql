@@ -1,5 +1,5 @@
 -- ==============================================================================
--- JRBTC-TECH - SISTEMA DE GESTÃO DE CHAMADOS TÉCNICOS DE TI
+-- JRBC TECH - SISTEMA DE GESTÃO DE CHAMADOS TÉCNICOS DE TI
 -- SCRIPT DE CRIAÇÃO DO BANCO DE DADOS (SUPABASE POSTGRESQL + RLS + TRIGGERS)
 -- ==============================================================================
 
@@ -150,7 +150,7 @@ CREATE TABLE IF NOT EXISTS public.noticias (
     texto TEXT NOT NULL,
     resumo VARCHAR(500),
     imagem_url TEXT,
-    autor VARCHAR(100) DEFAULT 'Equipe JRBTC-TECH',
+    autor VARCHAR(100) DEFAULT 'Equipe JRBC TECH',
     data_publicacao TIMESTAMPTZ DEFAULT NOW(),
     ativo BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMPTZ DEFAULT NOW()
@@ -217,11 +217,11 @@ BEGIN
         ) VALUES (
             NEW.id,
             NOW(),
-            COALESCE(current_setting('request.jwt.claim.email', true), 'sistema@jrbtc.com.br'),
+            COALESCE(current_setting('request.jwt.claim.email', true), 'sistema@jrbctech.com.br'),
             'CRIACAO',
             NULL,
             NEW.status,
-            'Chamado aberto com sucesso no sistema JRBTC-TECH com prioridade ' || NEW.prioridade
+            'Chamado aberto com sucesso no sistema JRBC TECH com prioridade ' || NEW.prioridade
         );
         RETURN NEW;
     END IF;
@@ -233,7 +233,7 @@ BEGIN
         ) VALUES (
             NEW.id,
             NOW(),
-            COALESCE(current_setting('request.jwt.claim.email', true), 'tecnico@jrbtc.com.br'),
+            COALESCE(current_setting('request.jwt.claim.email', true), 'tecnico@jrbctech.com.br'),
             'MUDANCA_STATUS',
             OLD.status,
             NEW.status,
@@ -251,7 +251,7 @@ BEGIN
         ) VALUES (
             NEW.id,
             NOW(),
-            COALESCE(current_setting('request.jwt.claim.email', true), 'admin@jrbtc.com.br'),
+            COALESCE(current_setting('request.jwt.claim.email', true), 'admin@jrbctech.com.br'),
             'ATRIBUICAO',
             OLD.status,
             NEW.status,

@@ -90,7 +90,7 @@ export default function TecnicosPage() {
             <UserCog className="w-4 h-4" /> Corpo Técnico
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-white">
-            Técnicos & Especialistas JRBTC-TECH
+            Técnicos & Especialistas JRBC TECH
           </h1>
           <p className="text-xs sm:text-sm text-slate-400 mt-1">
             Gestão da equipe de campo, competências técnicas e chamados vinculados.

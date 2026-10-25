@@ -96,11 +96,11 @@ export const Sidebar: React.FC = () => {
         {/* Brand Logo & Name */}
         <Link href="/dashboard" className="flex items-center gap-3 px-2 py-3 mb-6 group">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-cyan-400 p-0.5 shadow-glow-cyan flex items-center justify-center transition-transform group-hover:scale-105">
-            <img src="/logo-jrbtc.svg" alt="JRBTC-TECH" className="w-full h-full object-contain rounded-[10px]" />
+            <img src="/logo-jrbtc.svg" alt="JRBC TECH" className="w-full h-full object-contain rounded-[10px]" />
           </div>
           <div>
             <h1 className="font-heading font-extrabold text-base tracking-wider bg-gradient-to-r from-sky-400 via-cyan-300 to-white bg-clip-text text-transparent">
-              JRBTC-TECH
+              JRBC TECH
             </h1>
             <p className="text-[10px] text-slate-400 font-medium tracking-wide uppercase">
               {role === 'CLIENTE' ? 'Portal do Cliente' : role === 'TECNICO' ? 'Portal do Técnico' : 'Painel Administrativo'}
@@ -152,7 +152,7 @@ export const Sidebar: React.FC = () => {
         <div className="p-3.5 rounded-xl bg-gradient-to-b from-sky-950/40 to-slate-900/60 border border-sky-500/20">
           <div className="flex items-center gap-2 text-sky-400 text-xs font-semibold mb-1">
             <Headphones className="w-4 h-4" />
-            <span>Central JRBTC-TECH</span>
+            <span>Central JRBC TECH</span>
           </div>
           <p className="text-[11px] text-slate-400 mb-2">
             Precisa de atendimento de infraestrutura ou banco de dados?

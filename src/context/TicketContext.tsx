@@ -127,7 +127,7 @@ export const TicketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         const sn = localStorage.getItem('jrbtc_noticias'); if (sn) setNoticias(JSON.parse(sn));
       }
     } catch (err) {
-      console.error('[JRBTC] Erro ao carregar dados:', err);
+      console.error('[JRBC TECH] Erro ao carregar dados:', err);
       setChamados(MOCK_CHAMADOS);
     } finally {
       setIsLoading(false);
@@ -150,13 +150,13 @@ export const TicketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
           await supabase.from('chamado_historico').insert({
             chamado_id: chamadoId,
             data_hora: new Date().toISOString(),
-            usuario_email: user?.email || 'sistema@jrbtc.com.br',
+            usuario_email: user?.email || 'sistema@jrbctech.com.br',
             tipo_evento: 'MUDANCA_STATUS',
             status_novo: histStatus,
             descricao: histDesc,
           });
         }
-      } catch (err) { console.warn('[JRBTC] Supabase update error:', err); }
+      } catch (err) { console.warn('[JRBC TECH] Supabase update error:', err); }
     }
 
     const updated = chamados.map(c => {
@@ -165,7 +165,7 @@ export const TicketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         id: 'h-' + Date.now(),
         chamado_id: chamadoId,
         data_hora: new Date().toISOString(),
-        usuario_email: user?.email || 'sistema@jrbtc.com.br',
+        usuario_email: user?.email || 'sistema@jrbctech.com.br',
         tipo_evento: 'MUDANCA_STATUS',
         status_anterior: c.status,
         status_novo: histStatus,
@@ -233,7 +233,7 @@ export const TicketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
           status_pagamento: 'AGUARDANDO_PAGAMENTO', taxa_empresa: taxaEmpresa, valor_tecnico: valorTecnico,
         }).select().single();
         if (dbTicket) newTicket.id = dbTicket.id;
-      } catch (err) { console.warn('[JRBTC] create chamado error:', err); }
+      } catch (err) { console.warn('[JRBC TECH] create chamado error:', err); }
     }
 
     persistChamados([newTicket, ...chamados]);
@@ -252,7 +252,7 @@ export const TicketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     // Notificar admin
     sendEmailNotification({
       to: 'jrbctech@gmail.com',
-      subject: `[JRBTC-TECH] ✅ Novo Chamado PAGO na Fila: ${chamado.numero_chamado}`,
+      subject: `[JRBC TECH] ✅ Novo Chamado PAGO na Fila: ${chamado.numero_chamado}`,
       tipo: 'ABERTURA_CHAMADO', chamado: { ...chamado, status: 'PAGO' },
       cliente: clientes.find(c => c.id === chamado.cliente_id),
     });
@@ -275,7 +275,7 @@ export const TicketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     if (chamado) {
       sendEmailNotification({
         to: clientes.find(c => c.id === chamado.cliente_id)?.email || 'jrbctech@gmail.com',
-        subject: `[JRBTC-TECH] 🚗 Técnico a Caminho — Chamado ${chamado.numero_chamado}`,
+        subject: `[JRBC TECH] 🚗 Técnico a Caminho — Chamado ${chamado.numero_chamado}`,
         tipo: 'NOVO_COMENTARIO', chamado: { ...chamado, status: 'A_CAMINHO' },
         cliente: clientes.find(c => c.id === chamado.cliente_id),
       });
@@ -304,7 +304,7 @@ export const TicketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     // Notificar cliente para assinar
     sendEmailNotification({
       to: clientes.find(c => c.id === chamado.cliente_id)?.email || 'jrbctech@gmail.com',
-      subject: `[JRBTC-TECH] ✍️ Assine a Ordem de Serviço — Chamado ${chamado.numero_chamado}`,
+      subject: `[JRBC TECH] ✍️ Assine a Ordem de Serviço — Chamado ${chamado.numero_chamado}`,
       tipo: 'CONCLUSAO_CHAMADO', chamado: { ...chamado, status: 'AGUARDANDO_ASSINATURA', solucao },
       cliente: clientes.find(c => c.id === chamado.cliente_id),
     });
@@ -315,13 +315,13 @@ export const TicketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     const chamado = chamados.find(c => c.id === chamadoId);
     await updateChamadoFields(chamadoId, {
       status: 'AGUARDANDO_REPASSE', assinatura_cliente_url: assinaturaUrl,
-    }, `Ordem de Serviço assinada pelo cliente. Aguardando confirmação de repasse ao técnico pelo administrador JRBTC-TECH.`, 'AGUARDANDO_REPASSE');
+    }, `Ordem de Serviço assinada pelo cliente. Aguardando confirmação de repasse ao técnico pelo administrador JRBC TECH.`, 'AGUARDANDO_REPASSE');
 
     // Notificar admin sobre repasse pendente
     if (chamado) {
       sendEmailNotification({
         to: 'jrbctech@gmail.com',
-        subject: `[JRBTC-TECH] 💰 Repasse Pendente ao Técnico — Chamado ${chamado.numero_chamado}`,
+        subject: `[JRBC TECH] 💰 Repasse Pendente ao Técnico — Chamado ${chamado.numero_chamado}`,
         tipo: 'CONCLUSAO_CHAMADO', chamado: { ...chamado, status: 'AGUARDANDO_REPASSE' },
         cliente: clientes.find(c => c.id === chamado.cliente_id),
       });
@@ -334,7 +334,7 @@ export const TicketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     const valorTecnico = chamado?.valor_tecnico || 0;
     await updateChamadoFields(chamadoId, {
       status: 'FINALIZADO', status_pagamento: 'REPASSADO',
-    }, `Repasse de ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valorTecnico)} (70%) confirmado pelo administrador JRBTC-TECH. Chamado encerrado com sucesso.`, 'FINALIZADO');
+    }, `Repasse de ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valorTecnico)} (70%) confirmado pelo administrador JRBC TECH. Chamado encerrado com sucesso.`, 'FINALIZADO');
   };
 
   // Atualizar status genérico (Admin / legado)

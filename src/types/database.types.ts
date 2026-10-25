@@ -1,5 +1,5 @@
 // ============================================================================
-// JRBTC-TECH — Tipos do Banco de Dados (Supabase PostgreSQL)
+// JRBC TECH — Tipos do Banco de Dados (Supabase PostgreSQL)
 // ============================================================================
 
 export type UserRole = 'ADMIN' | 'TECNICO' | 'CLIENTE';

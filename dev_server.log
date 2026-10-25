@@ -1,0 +1,16 @@
+
+> jrbtc-tech-chamados@1.0.0 dev
+> next dev
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 1805ms
+ ○ Compiling / ...
+ ✓ Compiled / in 6s (658 modules)
+ HEAD / 200 in 6451ms
+ ✓ Compiled in 774ms (337 modules)
+ GET / 200 in 74ms
+ ○ Compiling /login ...
+ ✓ Compiled /login in 921ms (664 modules)

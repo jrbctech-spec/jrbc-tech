@@ -1,6 +1,6 @@
-# JRBTC-TECH - Sistema de Gestão de Chamados Técnicos de TI
+# JRBC TECH - Sistema de Gestão de Chamados Técnicos de TI
 
-Aplicação Full-Stack PWA responsiva (Web, Tablet e Mobile) de Gestão de Chamados Técnicos e Service Desk desenvolvida especificamente para a empresa **JRBTC-TECH**.
+Aplicação Full-Stack PWA responsiva (Web, Tablet e Mobile) de Gestão de Chamados Técnicos e Service Desk desenvolvida especificamente para a empresa **JRBC TECH**.
 
 ---
 
@@ -22,7 +22,7 @@ Aplicação Full-Stack PWA responsiva (Web, Tablet e Mobile) de Gestão de Chama
    - Sistema de mensagens com separador de visibilidade (*Visível ao Cliente* vs *Nota Interna Privada para a equipe técnica*).
 
 4. **Emissão de Ordem de Serviço e Recibo em PDF**:
-   - Geração de documento em PDF timbrado com identidade visual **JRBTC-TECH**.
+   - Geração de documento em PDF timbrado com identidade visual **JRBC TECH**.
    - Detalhamento do cliente, solicitante, laudo técnico, solução aplicada, horas trabalhadas, valor total e campos de assinatura digital/manual.
 
 5. **Notificações Automáticas por E-mail**:
@@ -101,6 +101,6 @@ Acesse a aplicação em [http://localhost:3000](http://localhost:3000).
 
 ## 📧 Suporte e Contato
 
-- **Empresa**: JRBTC-TECH Soluções em TI
+- **Empresa**: JRBC TECH Soluções em TI
 - **E-mail**: `jrbctech@gmail.com`
 - **Telefone**: (11) 98765-4321

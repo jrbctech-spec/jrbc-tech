@@ -72,7 +72,7 @@ export const TicketChat: React.FC<TicketChatProps> = ({ chamadoId, comentarios =
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <span className="font-semibold text-slate-100">
-                      {comment.usuario?.nome || (isMe ? user?.nome : 'Suporte JRBTC-TECH')}
+                      {comment.usuario?.nome || (isMe ? user?.nome : 'Suporte JRBC TECH')}
                     </span>
                     {isInternal && (
                       <span className="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold text-[10px] border border-amber-500/40 flex items-center gap-1">

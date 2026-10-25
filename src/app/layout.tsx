@@ -4,7 +4,7 @@ import { AuthProvider } from "@/context/AuthContext";
 import { TicketProvider } from "@/context/TicketContext";
 
 export const metadata: Metadata = {
-  title: "JRBTC-TECH | Gestão de Chamados Técnicos de TI",
+  title: "JRBC TECH | Gestão de Chamados Técnicos de TI",
   description: "Plataforma Full-Stack PWA de Service Desk e Atendimento Especializado de TI para empresas.",
   manifest: "/manifest.json",
   icons: { icon: "/logo-jrbtc.svg", apple: "/logo-jrbtc.svg" },

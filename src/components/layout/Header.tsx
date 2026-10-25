@@ -55,38 +55,38 @@ export const Header: React.FC = () => {
   return (
     <header className="sticky top-0 z-40 w-full h-16 border-b border-sky-950/40 bg-slate-950/90 backdrop-blur-md px-3 sm:px-6 flex items-center justify-between">
       {/* Lado Esquerdo - Botão Hamburger Mobile + Logo & Status */}
-      <div className="flex items-center gap-2 sm:gap-3">
+      <div className="flex items-center gap-2 sm:gap-3 shrink-0">
         {/* Botão Hamburger Mobile (Mínimo 44px de toque) */}
         <button
           onClick={() => setShowMobileDrawer(true)}
-          className="md:hidden min-w-[44px] min-h-[44px] flex items-center justify-center p-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 focus:outline-none"
+          className="md:hidden min-w-[44px] min-h-[44px] flex items-center justify-center p-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 focus:outline-none shrink-0"
           aria-label="Abrir Menu"
         >
-          <Menu className="w-6 h-6 text-sky-400" />
+          <Menu className="w-6 h-6 text-[#00e676]" />
         </button>
 
         {/* Logo Mobile */}
-        <Link href="/dashboard" className="md:hidden flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-sky-500 to-cyan-400 p-0.5 shadow-glow-cyan flex items-center justify-center">
-            <img src="/logo-jrbtc.svg" alt="JRBTC-TECH" className="w-full h-full object-contain rounded-md" />
+        <Link href="/dashboard" className="md:hidden flex items-center gap-2 shrink-0 whitespace-nowrap">
+          <div className="w-8 h-8 rounded-full border border-[#00e676]/40 overflow-hidden shrink-0 flex items-center justify-center bg-slate-950">
+            <img src="/logo.png" alt="JRBC TECH" className="w-full h-full object-cover" />
           </div>
-          <span className="font-heading font-extrabold text-sm text-white tracking-wide">
-            JRBTC-TECH
+          <span className="font-extrabold text-sm text-white tracking-wide whitespace-nowrap">
+            JRBC <span className="text-[#00e676]">TECH</span>
           </span>
         </Link>
 
         {/* Status Desktop */}
-        <div className="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-sky-950/50 border border-sky-500/20 text-xs text-sky-400">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span className="font-medium">JRBTC Service Desk Online</span>
-          <span className="text-slate-500">|</span>
+        <div className="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-emerald-950/60 text-xs text-[#00e676] shrink-0 whitespace-nowrap">
+          <span className="w-2 h-2 rounded-full bg-[#00e676] animate-pulse shrink-0"></span>
+          <span className="font-medium">JRBC TECH Service Desk Online</span>
+          <span className="text-slate-600">|</span>
           <span className="text-slate-300">Suporte 24/7</span>
         </div>
 
         {/* Badge do Papel Ativo */}
-        <div className="hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs">
+        <div className="hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs shrink-0 whitespace-nowrap">
           {role === 'ADMIN' && <ShieldCheck className="w-3.5 h-3.5 text-purple-400" />}
-          {role === 'TECNICO' && <Zap className="w-3.5 h-3.5 text-cyan-400" />}
+          {role === 'TECNICO' && <Zap className="w-3.5 h-3.5 text-[#00e676]" />}
           {role === 'CLIENTE' && <Users className="w-3.5 h-3.5 text-emerald-400" />}
           <span className="font-semibold text-slate-200">
             {ROLE_MAP[role]?.label || role}
@@ -95,12 +95,12 @@ export const Header: React.FC = () => {
       </div>
 
       {/* Lado Direito - Ações, Notificações e Usuário */}
-      <div className="flex items-center gap-2 sm:gap-3">
+      <div className="flex items-center gap-2 sm:gap-3 shrink-0">
         {/* Botão Abrir Chamado (Destaque) */}
         {(role === 'CLIENTE' || role === 'ADMIN') && (
           <Link
             href="/chamados/novo"
-            className="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-400 hover:to-cyan-400 text-white font-bold text-xs shadow-glow-cyan transition-all"
+            className="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-[#00e676] to-emerald-500 hover:from-emerald-400 hover:to-emerald-500 text-slate-950 font-extrabold text-xs shadow-[0_0_15px_rgba(0,230,118,0.25)] transition-all shrink-0 whitespace-nowrap"
           >
             <PlusCircle className="w-4 h-4" />
             <span>Abrir Chamado</span>
@@ -121,12 +121,12 @@ export const Header: React.FC = () => {
           </button>
 
           {showNotifications && (
-            <div className="absolute right-0 mt-2 w-80 rounded-2xl glass-dropdown p-4 shadow-2xl border border-sky-500/30 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+            <div className="absolute right-0 mt-2 w-80 rounded-2xl glass-dropdown p-4 shadow-2xl border border-emerald-500/30 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
               <div className="flex items-center justify-between pb-3 border-b border-slate-800">
                 <h4 className="text-sm font-semibold text-white flex items-center gap-1.5">
-                  <Bell className="w-4 h-4 text-sky-400" /> Notificações
+                  <Bell className="w-4 h-4 text-[#00e676]" /> Notificações
                 </h4>
-                <span className="text-xs text-sky-400 font-mono">{urgentTickets.length} pendentes</span>
+                <span className="text-xs text-[#00e676] font-mono">{urgentTickets.length} pendentes</span>
               </div>
 
               <div className="py-2 space-y-2 max-h-64 overflow-y-auto">
@@ -138,10 +138,10 @@ export const Header: React.FC = () => {
                       key={ticket.id}
                       href={`/chamados/${ticket.id}`}
                       onClick={() => setShowNotifications(false)}
-                      className="block p-2.5 rounded-lg bg-slate-900/80 hover:bg-sky-950/50 border border-slate-800 hover:border-sky-500/30 transition-colors"
+                      className="block p-2.5 rounded-lg bg-slate-900/80 hover:bg-emerald-950/40 border border-slate-800 hover:border-emerald-500/30 transition-colors"
                     >
                       <div className="flex items-center justify-between text-xs mb-1">
-                        <span className="font-mono text-sky-400 font-semibold">{ticket.numero_chamado}</span>
+                        <span className="font-mono text-[#00e676] font-semibold">{ticket.numero_chamado}</span>
                         <span className={`px-1.5 py-0.5 rounded text-[10px] font-semibold ${ticket.prioridade === 'CRITICA' ? 'bg-rose-500/20 text-rose-300' : 'bg-amber-500/20 text-amber-300'}`}>
                           {ticket.prioridade}
                         </span>
@@ -156,19 +156,19 @@ export const Header: React.FC = () => {
         </div>
 
         {/* Perfil do Usuário & Logout */}
-        <div className="flex items-center gap-2 pl-2 border-l border-slate-800">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-sky-600 to-cyan-400 flex items-center justify-center font-bold text-white text-xs shadow-md">
+        <div className="flex items-center gap-2 pl-2 border-l border-slate-800 shrink-0">
+          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-emerald-600 to-[#00e676] flex items-center justify-center font-extrabold text-slate-950 text-xs shadow-md shrink-0">
             {user?.nome?.charAt(0) || 'U'}
           </div>
 
-          <div className="hidden lg:block text-left">
+          <div className="hidden lg:block text-left shrink-0">
             <p className="text-xs font-semibold text-slate-100 truncate max-w-[130px]">{user?.nome}</p>
             <p className="text-[10px] text-slate-400 truncate">{ROLE_MAP[role]?.label || role}</p>
           </div>
 
           <button
             onClick={handleLogout}
-            className="min-w-[40px] min-h-[40px] flex items-center justify-center p-2 rounded-xl text-slate-400 hover:text-rose-400 hover:bg-rose-950/30 transition-colors"
+            className="min-w-[40px] min-h-[40px] flex items-center justify-center p-2 rounded-xl text-slate-400 hover:text-rose-400 hover:bg-rose-950/30 transition-colors shrink-0"
             title="Sair do sistema"
           >
             <LogOut className="w-4 h-4" />
@@ -179,17 +179,17 @@ export const Header: React.FC = () => {
       {/* Menu Gaveta Mobile (Slide-out Drawer) */}
       {showMobileDrawer && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex justify-start animate-in fade-in duration-150">
-          <div className="w-4/5 max-w-xs h-full bg-slate-950 border-r border-sky-950 p-5 flex flex-col justify-between overflow-y-auto">
+          <div className="w-4/5 max-w-xs h-full bg-[#05080f] border-r border-emerald-950 p-5 flex flex-col justify-between overflow-y-auto">
             <div>
               {/* Topo do Drawer */}
               <div className="flex items-center justify-between pb-4 border-b border-slate-800">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-sky-500 to-cyan-400 p-0.5 flex items-center justify-center">
-                    <img src="/logo-jrbtc.svg" alt="JRBTC-TECH" className="w-full h-full object-contain rounded-lg" />
+                  <div className="w-9 h-9 rounded-full border border-[#00e676] overflow-hidden flex items-center justify-center shrink-0">
+                    <img src="/logo.png" alt="JRBC TECH" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-sm text-white">JRBTC-TECH</h3>
-                    <span className="text-[10px] text-sky-400 font-semibold">{ROLE_MAP[role]?.label}</span>
+                    <h3 className="font-bold text-sm text-white">JRBC TECH</h3>
+                    <span className="text-[10px] text-[#00e676] font-semibold">{ROLE_MAP[role]?.label}</span>
                   </div>
                 </div>
                 <button
@@ -204,7 +204,7 @@ export const Header: React.FC = () => {
               <div className="py-4 border-b border-slate-800 text-xs">
                 <p className="text-slate-400">Conectado como:</p>
                 <p className="font-bold text-white mt-0.5 truncate">{user?.nome}</p>
-                <p className="text-[11px] text-sky-400 truncate">{user?.email}</p>
+                <p className="text-[11px] text-[#00e676] truncate">{user?.email}</p>
               </div>
 
               {/* Links de Navegação */}
@@ -219,9 +219,9 @@ export const Header: React.FC = () => {
                       key={item.href}
                       href={item.href}
                       onClick={() => setShowMobileDrawer(false)}
-                      className="flex items-center gap-3 p-3 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-sky-500/20 transition-all min-h-[44px]"
+                      className="flex items-center gap-3 p-3 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-emerald-500/20 transition-all min-h-[44px]"
                     >
-                      <Icon className="w-4 h-4 text-sky-400" />
+                      <Icon className="w-4 h-4 text-[#00e676]" />
                       <span>{item.label}</span>
                     </Link>
                   );
@@ -232,10 +232,10 @@ export const Header: React.FC = () => {
             {/* Rodapé do Drawer */}
             <div className="pt-4 border-t border-slate-800 space-y-3">
               <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-xs">
-                <p className="text-[11px] text-slate-400 flex items-center gap-1.5 mb-1 font-semibold text-sky-400">
+                <p className="text-[11px] text-slate-400 flex items-center gap-1.5 mb-1 font-semibold text-[#00e676]">
                   <Headphones className="w-3.5 h-3.5" /> Suporte Direto
                 </p>
-                <p className="text-[10px] text-slate-400">jrbctech@gmail.com</p>
+                <p className="text-[10px] text-slate-400">contato@jrbctech.com.br</p>
                 <p className="text-[10px] text-slate-400">(63) 98121-3180</p>
               </div>
 

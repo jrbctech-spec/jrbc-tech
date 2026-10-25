@@ -96,10 +96,10 @@ export default function LoginPage() {
         {/* Logotipo e Apresentação */}
         <div className="text-center space-y-2">
           <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-sky-500 to-cyan-400 p-1 mx-auto shadow-glow-cyan flex items-center justify-center mb-3">
-            <img src="/logo-jrbtc.svg" alt="JRBTC-TECH Logo" className="w-full h-full object-contain rounded-[14px]" />
+            <img src="/logo-jrbtc.svg" alt="JRBC TECH Logo" className="w-full h-full object-contain rounded-[14px]" />
           </div>
           <h1 className="font-heading text-2xl sm:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-sky-400 via-cyan-300 to-white bg-clip-text text-transparent">
-            JRBTC-TECH
+            JRBC TECH
           </h1>
           <p className="text-xs sm:text-sm text-slate-400">
             Service Desk de TI & Gestão de Chamados
@@ -287,11 +287,11 @@ export default function LoginPage() {
                 onClick={() => fillQuickLogin('jrbctech@gmail.com')}
                 className="p-1.5 rounded-lg bg-purple-950/40 border border-purple-500/30 text-purple-300 font-semibold"
               >
-                Admin (JRBTC)
+                Admin (JRBC TECH)
               </button>
               <button
                 type="button"
-                onClick={() => fillQuickLogin('carlos.silva@jrbtc.com.br')}
+                onClick={() => fillQuickLogin('carlos.silva@jrbctech.com.br')}
                 className="p-1.5 rounded-lg bg-sky-950/40 border border-sky-500/30 text-sky-300 font-semibold"
               >
                 Técnico (Carlos)
@@ -308,7 +308,7 @@ export default function LoginPage() {
         </div>
 
         <p className="text-center text-[11px] text-slate-500">
-          JRBTC-TECH Soluções em TI • Central: jrbctech@gmail.com
+          JRBC TECH Soluções em TI • Central: jrbctech@gmail.com
         </p>
       </div>
     </div>

@@ -299,7 +299,7 @@ export default function DetalheChamadoPage() {
                   {chamado.tecnico_responsavel?.nome || 'Aguardando atribuição de técnico'}
                 </p>
                 <p className="text-xs text-slate-400 mt-0.5">
-                  {chamado.tecnico_responsavel?.email || 'Central JRBTC-TECH'}
+                  {chamado.tecnico_responsavel?.email || 'Central JRBC TECH'}
                 </p>
               </div>
             )}

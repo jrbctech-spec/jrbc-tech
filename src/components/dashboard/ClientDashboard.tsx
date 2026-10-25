@@ -46,7 +46,7 @@ export const ClientDashboard: React.FC = () => {
               Bem-vindo, {user?.nome || 'Cliente'}!
             </h1>
             <p className="text-sm text-slate-300 max-w-xl">
-              Abra novas solicitações técnicas, acompanhe o diagnóstico da equipe da <strong>JRBTC-TECH</strong> e consulte suas Ordens de Serviço.
+              Abra novas solicitações técnicas, acompanhe o diagnóstico da equipe da <strong>JRBC TECH</strong> e consulte suas Ordens de Serviço.
             </p>
           </div>
 
@@ -199,7 +199,7 @@ export const ClientDashboard: React.FC = () => {
           <div className="p-5 rounded-2xl glass-card border-sky-500/30 space-y-3">
             <h3 className="font-bold text-sm text-white flex items-center gap-2">
               <Headphones className="w-4 h-4 text-sky-400" />
-              Canais Diretos JRBTC-TECH
+              Canais Diretos JRBC TECH
             </h3>
             <p className="text-xs text-slate-400">
               Dúvidas urgentes ou suporte emergencial:
@@ -214,7 +214,7 @@ export const ClientDashboard: React.FC = () => {
                 <span className="font-mono text-[11px]">{suporteEmail}</span>
               </a>
               <a
-                href={`https://wa.me/5563981213180?text=Ol%C3%A1%2C%20preciso%20de%20suporte%20t%C3%A9cnico%20da%20JRBTC-TECH`}
+                href={`https://wa.me/5563981213180?text=Ol%C3%A1%2C%20preciso%20de%20suporte%20t%C3%A9cnico%20da%20JRBC TECH`}
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2.5 p-2.5 rounded-lg bg-slate-900/70 hover:bg-emerald-950/50 border border-slate-800 text-slate-200 transition-colors"

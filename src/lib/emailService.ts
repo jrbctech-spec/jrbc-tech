@@ -34,7 +34,7 @@ export function generateTicketOpenEmailHtml(chamado: Chamado, cliente?: Cliente 
   <body>
     <div class="container">
       <div class="header">
-        <h1>JRBTC-TECH</h1>
+        <h1>JRBC TECH</h1>
         <p>Soluções Especializadas em Tecnologia da Informação</p>
       </div>
       <div class="content">
@@ -60,7 +60,7 @@ export function generateTicketOpenEmailHtml(chamado: Chamado, cliente?: Cliente 
         </p>
       </div>
       <div class="footer">
-        JRBTC-TECH - E-mail: jrbctech@gmail.com | Suporte: (63) 98121-3180<br>
+        JRBC TECH - E-mail: jrbctech@gmail.com | Suporte: (63) 98121-3180<br>
         Este é um e-mail automático enviado pelo sistema de Service Desk.
       </div>
     </div>
@@ -93,7 +93,7 @@ export function generateTicketClosedEmailHtml(chamado: Chamado, cliente?: Client
   <body>
     <div class="container">
       <div class="header">
-        <h1>JRBTC-TECH</h1>
+        <h1>JRBC TECH</h1>
         <p>Ordem de Serviço Concluída</p>
       </div>
       <div class="content">
@@ -119,7 +119,7 @@ export function generateTicketClosedEmailHtml(chamado: Chamado, cliente?: Client
         </p>
       </div>
       <div class="footer">
-        JRBTC-TECH - E-mail: jrbctech@gmail.com | Suporte: (63) 98121-3180<br>
+        JRBC TECH - E-mail: jrbctech@gmail.com | Suporte: (63) 98121-3180<br>
         Obrigado pela confiança em nossos serviços de TI!
       </div>
     </div>
@@ -136,7 +136,7 @@ export async function sendEmailNotification(payloadOrTipo: SendEmailPayload | st
     if (typeof payloadOrTipo === 'string') {
       payload = {
         to: toArg || 'jrbctech@gmail.com',
-        subject: payloadOrTipo === 'CONCLUSAO_CHAMADO' ? 'Ordem de Serviço Concluída' : 'Notificação JRBTC-TECH',
+        subject: payloadOrTipo === 'CONCLUSAO_CHAMADO' ? 'Ordem de Serviço Concluída' : 'Notificação JRBC TECH',
         tipo: payloadOrTipo === 'CONCLUSAO_CHAMADO' ? 'CONCLUSAO_CHAMADO' : (payloadOrTipo === 'NOVO_CHAMADO' ? 'ABERTURA_CHAMADO' : 'NOVO_COMENTARIO'),
         chamado: chamadoArg as Chamado,
         cliente: undefined,

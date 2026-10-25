@@ -2,7 +2,7 @@
   "name": "jrbtc-tech-chamados",
   "version": "1.0.0",
   "private": true,
-  "description": "Sistema Full-Stack PWA de Gestão de Chamados Técnicos de TI para JRBTC-TECH",
+  "description": "Sistema Full-Stack PWA de Gestão de Chamados Técnicos de TI para JRBC TECH",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

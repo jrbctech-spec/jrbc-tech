@@ -92,7 +92,7 @@ export default function AssinarOSPage({ params }: { params: { id: string } }) {
           )}
           <div className="space-y-0.5">
             <p className="text-[11px] text-slate-500 uppercase font-bold">Técnico</p>
-            <p className="text-sm font-semibold text-white">{chamado.tecnico_responsavel?.nome || 'Técnico JRBTC-TECH'}</p>
+            <p className="text-sm font-semibold text-white">{chamado.tecnico_responsavel?.nome || 'Técnico JRBC TECH'}</p>
           </div>
           {chamado.tempo_atendimento_horas && (
             <div className="space-y-0.5">
@@ -112,7 +112,7 @@ export default function AssinarOSPage({ params }: { params: { id: string } }) {
       {/* Declaração */}
       <div className="p-4 rounded-xl bg-slate-900/50 border border-slate-800 text-xs text-slate-300 leading-relaxed">
         <p>
-          Eu, <strong className="text-white">{user?.nome || 'Responsável'}</strong>, confirmo que os serviços descritos acima foram executados de forma satisfatória pelo técnico da <strong className="text-sky-400">JRBTC-TECH</strong> e autorizo o encerramento desta Ordem de Serviço.
+          Eu, <strong className="text-white">{user?.nome || 'Responsável'}</strong>, confirmo que os serviços descritos acima foram executados de forma satisfatória pelo técnico da <strong className="text-sky-400">JRBC TECH</strong> e autorizo o encerramento desta Ordem de Serviço.
         </p>
       </div>
 

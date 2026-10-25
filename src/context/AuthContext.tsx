@@ -28,10 +28,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Helper para determinar o papel do usuário a partir do e-mail ou dados da tabela
   const resolveUserRole = (email: string, dbRole?: UserRole): UserRole => {
     const cleanEmail = email.toLowerCase().trim();
-    if (cleanEmail === 'jrbctech@gmail.com' || cleanEmail === 'admin@jrbtc.com.br' || cleanEmail.includes('admin')) {
+    if (cleanEmail === 'jrbctech@gmail.com' || cleanEmail === 'admin@jrbctech.com.br' || cleanEmail.includes('admin')) {
       return 'ADMIN';
     }
-    if (cleanEmail.includes('tecnico') || cleanEmail === 'carlos.silva@jrbtc.com.br' || cleanEmail === 'mariana.oliveira@jrbtc.com.br') {
+    if (cleanEmail.includes('tecnico') || cleanEmail === 'carlos.silva@jrbctech.com.br' || cleanEmail === 'mariana.oliveira@jrbctech.com.br') {
       return 'TECNICO';
     }
     return dbRole || 'CLIENTE';
@@ -112,7 +112,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           }
         }
       } catch (err) {
-        console.error('[JRBTC-TECH] Erro na inicialização da autenticação:', err);
+        console.error('[JRBC TECH] Erro na inicialização da autenticação:', err);
         setUser(MOCK_USUARIOS[3]);
         setRole('CLIENTE');
       } finally {

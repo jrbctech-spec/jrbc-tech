@@ -16,7 +16,7 @@ export default function ConfiguracoesPage() {
     configuracoes.find((c) => c.chave === 'empresa_telefone')?.valor || '(63) 98121-3180'
   );
   const [nomeEmpresa, setNomeEmpresa] = useState(
-    configuracoes.find((c) => c.chave === 'empresa_nome')?.valor || 'JRBTC-TECH Soluções em TI'
+    configuracoes.find((c) => c.chave === 'empresa_nome')?.valor || 'JRBC TECH Soluções em TI'
   );
   const [slaCritica, setSlaCritica] = useState(
     configuracoes.find((c) => c.chave === 'sla_critica_horas')?.valor || '2'
@@ -47,7 +47,7 @@ export default function ConfiguracoesPage() {
           <Settings className="w-4 h-4" /> Parâmetros Gerais
         </div>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-white">
-          Configurações do Sistema JRBTC-TECH
+          Configurações do Sistema JRBC TECH
         </h1>
         <p className="text-xs sm:text-sm text-slate-400 mt-1">
           Dados de contato institucional, SLAs e parametrizações operacionais do Service Desk.
