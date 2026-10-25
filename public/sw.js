@@ -1,4 +1,4 @@
-// JRBTC-TECH Service Worker para suporte PWA e Cache Offline
+// JRBC TECH Service Worker para suporte PWA e Cache Offline
 const CACHE_NAME = 'jrbtc-tech-v1';
 const STATIC_ASSETS = [
   '/',

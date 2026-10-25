@@ -1,5 +1,5 @@
 -- ==============================================================================
--- JRBTC-TECH - SCRIPT COMPLETO DE INSTALAÇÃO & SEED (EXECUTE NO SUPABASE SQL EDITOR)
+-- JRBC TECH - SCRIPT COMPLETO DE INSTALAÇÃO & SEED (EXECUTE NO SUPABASE SQL EDITOR)
 -- PROJETO SUPABASE ID: mfvtzqayexkmeuhcowrk
 -- ==============================================================================
 
@@ -177,7 +177,7 @@ CREATE TABLE IF NOT EXISTS public.noticias (
     texto TEXT NOT NULL,
     resumo VARCHAR(500),
     imagem_url TEXT,
-    autor VARCHAR(100) DEFAULT 'Equipe JRBTC-TECH',
+    autor VARCHAR(100) DEFAULT 'Equipe JRBC TECH',
     data_publicacao TIMESTAMPTZ DEFAULT NOW(),
     ativo BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMPTZ DEFAULT NOW()
@@ -256,10 +256,10 @@ CREATE POLICY "Acesso completo configuracoes" ON public.configuracoes FOR ALL US
 
 -- Configurações
 INSERT INTO public.configuracoes (chave, valor, descricao) VALUES
-('empresa_nome', 'JRBTC-TECH Soluções em TI', 'Razão social oficial'),
+('empresa_nome', 'JRBC TECH Soluções em TI', 'Razão social oficial'),
 ('empresa_email_suporte', 'jrbctech@gmail.com', 'E-mail oficial para notificações e atendimento'),
 ('empresa_telefone', '(63) 98121-3180', 'Telefone / WhatsApp central de suporte'),
-('empresa_cnpj', '45.123.456/0001-89', 'CNPJ da JRBTC-TECH'),
+('empresa_cnpj', '65.488.003/0001-61', 'CNPJ da JRBC TECH'),
 ('empresa_endereco', 'Av. Paulista, 1000 - Bela Vista, São Paulo - SP', 'Sede corporativa'),
 ('sla_critica_horas', '2', 'SLA Crítica'),
 ('sla_alta_horas', '8', 'SLA Alta'),
@@ -302,23 +302,23 @@ ON CONFLICT (id) DO NOTHING;
 
 -- Usuários
 INSERT INTO public.usuarios (id, nome, email, telefone, tipo_usuario, cliente_id, ativo) VALUES
-('44444444-4444-4444-4444-444444444401', 'Diretoria JRBTC-TECH (Admin)', 'admin@jrbtc.com.br', '(63) 98121-3180', 'ADMIN', NULL, TRUE),
-('44444444-4444-4444-4444-444444444402', 'Carlos Silva (Técnico Infra)', 'carlos.silva@jrbtc.com.br', '(11) 97111-2233', 'TECNICO', NULL, TRUE),
-('44444444-4444-4444-4444-444444444403', 'Mariana Oliveira (DBA)', 'mariana.oliveira@jrbtc.com.br', '(11) 97222-3344', 'TECNICO', NULL, TRUE),
+('44444444-4444-4444-4444-444444444401', 'Diretoria JRBC TECH (Admin)', 'admin@jrbctech.com.br', '(63) 98121-3180', 'ADMIN', NULL, TRUE),
+('44444444-4444-4444-4444-444444444402', 'Carlos Silva (Técnico Infra)', 'carlos.silva@jrbctech.com.br', '(11) 97111-2233', 'TECNICO', NULL, TRUE),
+('44444444-4444-4444-4444-444444444403', 'Mariana Oliveira (DBA)', 'mariana.oliveira@jrbctech.com.br', '(11) 97222-3344', 'TECNICO', NULL, TRUE),
 ('44444444-4444-4444-4444-444444444404', 'Roberto Mendes (Alpha Contábil)', 'roberto@alphacontabil.com.br', '(11) 99887-1122', 'CLIENTE', '33333333-3333-3333-3333-333333333301', TRUE),
 ('44444444-4444-4444-4444-444444444405', 'Fernanda Lima (Nexus Log)', 'fernanda@nexuslog.com.br', '(11) 97766-3344', 'CLIENTE', '33333333-3333-3333-3333-333333333302', TRUE)
 ON CONFLICT (id) DO NOTHING;
 
 -- Técnicos
 INSERT INTO public.tecnicos (id, usuario_id, nome, email, telefone, especialidades, ativo) VALUES
-('55555555-5555-5555-5555-555555555501', '44444444-4444-4444-4444-444444444402', 'Carlos Silva', 'carlos.silva@jrbtc.com.br', '(11) 97111-2233', ARRAY['Infraestrutura de TI', 'Redes & Segurança', 'Microinformática'], TRUE),
-('55555555-5555-5555-5555-555555555502', '44444444-4444-4444-4444-444444444403', 'Mariana Oliveira', 'mariana.oliveira@jrbtc.com.br', '(11) 97222-3344', ARRAY['Banco de Dados', 'PostgreSQL', 'Cloud & Backup'], TRUE)
+('55555555-5555-5555-5555-555555555501', '44444444-4444-4444-4444-444444444402', 'Carlos Silva', 'carlos.silva@jrbctech.com.br', '(11) 97111-2233', ARRAY['Infraestrutura de TI', 'Redes & Segurança', 'Microinformática'], TRUE),
+('55555555-5555-5555-5555-555555555502', '44444444-4444-4444-4444-444444444403', 'Mariana Oliveira', 'mariana.oliveira@jrbctech.com.br', '(11) 97222-3344', ARRAY['Banco de Dados', 'PostgreSQL', 'Cloud & Backup'], TRUE)
 ON CONFLICT (id) DO NOTHING;
 
 -- Notícias
 INSERT INTO public.noticias (id, titulo, resumo, texto, imagem_url, autor, data_publicacao, ativo) VALUES
-('66666666-6666-6666-6666-666666666601', 'Alerta de Segurança: Campanha de Phishing bancário ativa', 'Identificamos e-mails falsos solicitando atualização cadastral bancária com links maliciosos.', 'Recomendamos a todos os colaboradores que redobrem a atenção a remetentes desconhecidos. Nunca informem senhas ou cliquem em links suspeitos. Em caso de dúvidas, abram um chamado imediatamente para análise pela equipe JRBTC-TECH.', 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80', 'Segurança da Informação JRBTC', NOW() - INTERVAL '2 days', TRUE),
-('66666666-6666-6666-6666-666666666602', 'Manutenção Programada em Servidores de Backup', 'Janela de manutenção preventiva no domingo das 02h às 06h da manhã.', 'Informamos aos clientes corporativos que realizaremos upgrade de capacidade no nosso cluster de armazenamento em nuvem. Não haverá impacto durante o horário comercial regular.', 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=80', 'Infraestrutura JRBTC', NOW() - INTERVAL '5 days', TRUE)
+('66666666-6666-6666-6666-666666666601', 'Alerta de Segurança: Campanha de Phishing bancário ativa', 'Identificamos e-mails falsos solicitando atualização cadastral bancária com links maliciosos.', 'Recomendamos a todos os colaboradores que redobrem a atenção a remetentes desconhecidos. Nunca informem senhas ou cliquem em links suspeitos. Em caso de dúvidas, abram um chamado imediatamente para análise pela equipe JRBC TECH.', 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80', 'Segurança da Informação JRBC TECH', NOW() - INTERVAL '2 days', TRUE),
+('66666666-6666-6666-6666-666666666602', 'Manutenção Programada em Servidores de Backup', 'Janela de manutenção preventiva no domingo das 02h às 06h da manhã.', 'Informamos aos clientes corporativos que realizaremos upgrade de capacidade no nosso cluster de armazenamento em nuvem. Não haverá impacto durante o horário comercial regular.', 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=80', 'Infraestrutura JRBC TECH', NOW() - INTERVAL '5 days', TRUE)
 ON CONFLICT (id) DO NOTHING;
 
 -- Chamados Iniciais

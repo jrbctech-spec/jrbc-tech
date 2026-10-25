@@ -23,7 +23,7 @@ export async function POST(req: Request) {
     if (process.env.RESEND_API_KEY && process.env.RESEND_API_KEY.startsWith("re_")) {
       const resend = new Resend(process.env.RESEND_API_KEY);
       const data = await resend.emails.send({
-        from: "JRBTC-TECH Suporte <suporte@jrbtc.com.br>",
+        from: "JRBC TECH Suporte <suporte@jrbctech.com.br>",
         to: recipientList,
         subject: subject,
         html: htmlContent,
@@ -44,7 +44,7 @@ export async function POST(req: Request) {
       });
 
       const info = await transporter.sendMail({
-        from: process.env.SMTP_FROM || '"JRBTC-TECH Suporte" <jrbctech@gmail.com>',
+        from: process.env.SMTP_FROM || '"JRBC TECH Suporte" <jrbctech@gmail.com>',
         to: recipientList.join(", "),
         subject: subject,
         html: htmlContent,
@@ -55,7 +55,7 @@ export async function POST(req: Request) {
 
     // 3. Fallback Simulador em desenvolvimento
     console.log("==================================================");
-    console.log("[JRBTC-TECH EMAIL SIMULATOR]");
+    console.log("[JRBC TECH EMAIL SIMULATOR]");
     console.log(`Para: ${recipientList.join(", ")}`);
     console.log(`Assunto: ${subject}`);
     console.log(`Tipo: ${tipo}`);

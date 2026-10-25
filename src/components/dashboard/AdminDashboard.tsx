@@ -47,7 +47,7 @@ export const AdminDashboard: React.FC = () => {
           <div>
             <div className="flex items-center gap-2 text-xs font-bold text-sky-400 uppercase tracking-widest mb-1">
               <span className="w-2 h-2 rounded-full bg-sky-400"></span>
-              Painel de Controle Executivo • JRBTC-TECH
+              Painel de Controle Executivo • JRBC TECH
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
               Central de Gestão e Operações de TI

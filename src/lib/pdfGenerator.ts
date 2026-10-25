@@ -25,26 +25,27 @@ export function generateServiceOrderPDF({
   const margin = 14;
   let currentY = 16;
 
-  // --- CABEÇALHO CORPORATIVO JRBTC-TECH ---
+  // --- CABEÇALHO CORPORATIVO JRBC TECH ---
   // Barra de destaque superior
-  doc.setFillColor(14, 165, 233); // #0ea5e9 Blue
+  doc.setFillColor(0, 230, 118); // #00e676 Tech Green
   doc.rect(0, 0, pageWidth, 6, "F");
 
   // Logo / Título da Empresa
   doc.setFont("helvetica", "bold");
   doc.setFontSize(20);
-  doc.setTextColor(7, 12, 29); // Navy dark
-  doc.text("JRBTC-TECH", margin, currentY + 4);
+  doc.setTextColor(5, 8, 15); // Dark theme accent #05080f
+  doc.text("JRBC TECH TECNOLOGIA", margin, currentY + 4);
 
   doc.setFontSize(9);
   doc.setFont("helvetica", "normal");
   doc.setTextColor(100, 116, 139);
-  doc.text("Soluções Especializadas em Tecnologia da Informação", margin, currentY + 9);
-  doc.text("CNPJ: 45.123.456/0001-89 | E-mail: jrbctech@gmail.com | Tel: (63) 98121-3180", margin, currentY + 14);
+  doc.text("JRBC TECH TECNOLOGIA LTDA — Sustentação de TI & Missão Crítica", margin, currentY + 9);
+  doc.text("CNPJ: 65.488.003/0001-61 | E-mail: contato@jrbctech.com.br | Tel/WhatsApp: (63) 98121-3180", margin, currentY + 14);
+  doc.text("Sede: Quadra ACSV SE 32, Av. LO 05, Lote 22, Nº 22, Plano Diretor Sul, Palmas – TO, CEP: 77.021-026", margin, currentY + 18);
 
   // Caixa de Protocolo da Ordem de Serviço (Direita)
   const boxWidth = 60;
-  const boxHeight = 18;
+  const boxHeight = 20;
   const boxX = pageWidth - margin - boxWidth;
   doc.setFillColor(241, 245, 249);
   doc.setDrawColor(203, 213, 225);
@@ -56,10 +57,10 @@ export function generateServiceOrderPDF({
   doc.text("ORDEM DE SERVIÇO / RECIBO", boxX + 4, currentY + 3);
 
   doc.setFontSize(12);
-  doc.setTextColor(14, 165, 233);
-  doc.text(chamado.numero_chamado, boxX + 4, currentY + 11);
+  doc.setTextColor(0, 180, 90);
+  doc.text(chamado.numero_chamado, boxX + 4, currentY + 12);
 
-  currentY += 24;
+  currentY += 28;
 
   // Linha divisória
   doc.setDrawColor(226, 232, 240);
@@ -164,7 +165,7 @@ export function generateServiceOrderPDF({
   doc.setFont("helvetica", "bold");
   doc.text("Técnico Resp.:", col2, currentY);
   doc.setFont("helvetica", "normal");
-  doc.text(tecnico?.nome || chamado.tecnico_responsavel?.nome || "Carlos Silva (JRBTC-TECH)", col2 + 26, currentY);
+  doc.text(tecnico?.nome || chamado.tecnico_responsavel?.nome || "Equipe Técnica Especializada", col2 + 26, currentY);
   currentY += 8;
 
   // --- SEÇÃO 3: DESCRIÇÃO DA SOLICITAÇÃO ---
@@ -264,10 +265,10 @@ export function generateServiceOrderPDF({
   doc.setFont("helvetica", "bold");
   doc.setFontSize(8);
   doc.setTextColor(30, 41, 59);
-  doc.text("JRBTC-TECH - Técnico Responsável", sig1X + 4, currentY + 4);
+  doc.text("JRBC TECH - Corpo Técnico Especializado", sig1X + 4, currentY + 4);
   doc.setFont("helvetica", "normal");
   doc.setFontSize(7.5);
-  doc.text(tecnico?.nome || "Carlos Silva", sig1X + 4, currentY + 8);
+  doc.text(tecnico?.nome || "Equipe Técnica JRBC TECH", sig1X + 4, currentY + 8);
 
   // Assinatura Cliente
   doc.line(sig2X, currentY, sig2X + sigWidth, currentY);
@@ -282,7 +283,7 @@ export function generateServiceOrderPDF({
   doc.setFontSize(7);
   doc.setTextColor(148, 163, 184);
   doc.text(
-    `Documento emitido eletronicamente via Sistema JRBTC-TECH em ${formatDate(new Date().toISOString())}. Validação: ${chamado.id.slice(0, 8).toUpperCase()}`,
+    `Documento emitido eletronicamente por JRBC TECH TECNOLOGIA LTDA em ${formatDate(new Date().toISOString())}. Validação: ${chamado.id.slice(0, 8).toUpperCase()}`,
     margin,
     290
   );

@@ -1,5 +1,5 @@
 -- ==============================================================================
--- JRBTC-TECH - MIGRAÇÃO V2 (ADICIONAR NOVOS CAMPOS SE AS TABELAS JÁ EXISTIREM)
+-- JRBC TECH - MIGRAÇÃO V2 (ADICIONAR NOVOS CAMPOS SE AS TABELAS JÁ EXISTIREM)
 -- ==============================================================================
 
 -- 1. TÉCNICOS: Adicionar campos de PIX

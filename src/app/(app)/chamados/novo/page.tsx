@@ -110,7 +110,7 @@ export default function NovoChamadoPage() {
     'Banco de Dados': Database,
   };
 
-  const PIX_CHAVE = '45.123.456/0001-89'; // CNPJ JRBTC-TECH
+  const PIX_CHAVE = '65.488.003/0001-61'; // CNPJ JRBC TECH
 
   return (
     <div className="max-w-3xl mx-auto space-y-5 animate-in fade-in duration-200 pb-24">
@@ -129,7 +129,7 @@ export default function NovoChamadoPage() {
             </React.Fragment>
           ))}
         </div>
-        <span className="text-xs text-sky-400 font-bold font-mono">JRBTC Service Desk</span>
+        <span className="text-xs text-sky-400 font-bold font-mono">JRBC TECH Service Desk</span>
       </div>
 
       {/* ===== ETAPA 1: FORMULÁRIO ===== */}
@@ -292,7 +292,7 @@ export default function NovoChamadoPage() {
           <div className="text-center p-6 rounded-2xl bg-gradient-to-b from-emerald-950/40 to-slate-900/60 border border-emerald-500/30">
             <p className="text-xs text-slate-400 mb-2">Valor total do serviço</p>
             <p className="text-4xl font-extrabold text-emerald-400">{formatCurrency(createdTicket.valor)}</p>
-            <p className="text-[11px] text-slate-400 mt-2">CNPJ: <strong className="text-slate-200">45.123.456/0001-89</strong></p>
+            <p className="text-[11px] text-slate-400 mt-2">CNPJ: <strong className="text-slate-200">65.488.003/0001-61</strong></p>
             <p className="text-[11px] text-slate-400">Chave PIX: <strong className="text-slate-200">{PIX_CHAVE}</strong></p>
           </div>
 
@@ -302,7 +302,7 @@ export default function NovoChamadoPage() {
               <div className="w-full h-full bg-slate-100 rounded-xl flex flex-col items-center justify-center gap-2">
                 <QrCode className="w-20 h-20 text-slate-800" />
                 <p className="text-[9px] text-slate-500 text-center font-bold">QR CODE PIX</p>
-                <p className="text-[8px] text-slate-400 text-center">JRBTC-TECH<br />CNPJ 45.123.456/0001-89</p>
+                <p className="text-[8px] text-slate-400 text-center">JRBC TECH<br />CNPJ 65.488.003/0001-61</p>
               </div>
             </div>
 
@@ -310,7 +310,7 @@ export default function NovoChamadoPage() {
             <div className="w-full p-3 rounded-xl bg-slate-900 border border-slate-800">
               <p className="text-[10px] text-slate-400 mb-1 font-semibold">PIX Copia e Cola:</p>
               <code className="text-[10px] text-sky-300 font-mono break-all leading-relaxed">
-                00020101021226860014BR.GOV.BCB.PIX2564pix.jrbtc.com.br/qr/v2/45123456000189-{createdTicket.numero}5204000053039865406{String(createdTicket.valor * 100).padStart(10, '0')}5802BR5910JRBTCTECH6009SAOPAULO62070503***6304{Math.random().toString(36).substring(2, 6).toUpperCase()}
+                00020101021226860014BR.GOV.BCB.PIX2564pix.jrbctech.com.br/qr/v2/65488003000161-{createdTicket.numero}5204000053039865406{String(createdTicket.valor * 100).padStart(10, '0')}5802BR5910JRBC TECHTECH6009SAOPAULO62070503***6304{Math.random().toString(36).substring(2, 6).toUpperCase()}
               </code>
             </div>
           </div>
@@ -322,7 +322,7 @@ export default function NovoChamadoPage() {
 
           <label className="flex items-center gap-3 p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 cursor-pointer min-h-[52px]">
             <input type="checkbox" checked={pixConfirmed} onChange={e => setPixConfirmed(e.target.checked)} className="w-5 h-5 rounded accent-emerald-500" />
-            <span className="text-xs text-slate-300 font-semibold">Confirmo que efetuei o pagamento de <strong className="text-emerald-400">{formatCurrency(createdTicket.valor)}</strong> via PIX para a JRBTC-TECH.</span>
+            <span className="text-xs text-slate-300 font-semibold">Confirmo que efetuei o pagamento de <strong className="text-emerald-400">{formatCurrency(createdTicket.valor)}</strong> via PIX para a JRBC TECH.</span>
           </label>
 
           <div className="flex flex-col gap-3 pt-2">

@@ -5,7 +5,8 @@ import { Comentario, CommentVisibility } from '@/types/database.types';
 import { useTickets } from '@/context/TicketContext';
 import { useAuth } from '@/context/AuthContext';
 import { formatDateTime } from '@/lib/utils';
-import { Send, Eye, Lock, MessageSquare, ShieldAlert, Sparkles } from 'lucide-react';
+import { Send, Eye, Lock, MessageSquare, ShieldAlert, Sparkles, Bot } from 'lucide-react';
+import { pedirDiagnosticoMetaAI } from '@/lib/metaAiService';
 
 interface TicketChatProps {
   chamadoId: string;
@@ -18,6 +19,7 @@ export const TicketChat: React.FC<TicketChatProps> = ({ chamadoId, comentarios =
   const [mensagem, setMensagem] = useState('');
   const [visibilidade, setVisibilidade] = useState<CommentVisibility>('CLIENTE');
   const [isSending, setIsSending] = useState(false);
+  const [isAiLoading, setIsAiLoading] = useState(false);
 
   // Filtragem de Comentários conforme RLS: Cliente nunca vê INTERNO
   const visibleComments = comentarios.filter((c) => {
@@ -44,8 +46,39 @@ export const TicketChat: React.FC<TicketChatProps> = ({ chamadoId, comentarios =
     }
   };
 
+  const handleConsultarMetaAI = async () => {
+    setIsAiLoading(true);
+    try {
+      const contextoMsg = visibleComments.map(c => `${c.usuario?.nome || 'Usuário'}: ${c.mensagem}`).join('\n');
+      const sugestao = await pedirDiagnosticoMetaAI(
+        "Forneça um diagnóstico prévio ou recomendação técnica para este atendimento.",
+        contextoMsg || "Abertura de chamado recente."
+      );
+      setMensagem(sugestao);
+    } finally {
+      setIsAiLoading(false);
+    }
+  };
+
   return (
     <div className="space-y-4 flex flex-col h-full">
+      {/* Botão Assistente Meta AI */}
+      <div className="flex items-center justify-between p-3 rounded-xl bg-gradient-to-r from-emerald-950/60 via-slate-900 to-slate-950 border border-emerald-500/30">
+        <div className="flex items-center gap-2">
+          <Bot className="w-4 h-4 text-[#00e676]" />
+          <span className="text-xs font-bold text-white">Meta AI — Assistente de Diagnóstico</span>
+        </div>
+        <button
+          type="button"
+          onClick={handleConsultarMetaAI}
+          disabled={isAiLoading}
+          className="px-3 py-1.5 rounded-lg bg-[#00e676] hover:bg-emerald-400 text-slate-950 font-extrabold text-[11px] flex items-center gap-1.5 transition-all shadow-md disabled:opacity-50"
+        >
+          <Sparkles className="w-3.5 h-3.5 fill-slate-950" />
+          {isAiLoading ? 'Analisando...' : 'Gerar Sugestão de Diagnóstico'}
+        </button>
+      </div>
+
       {/* Lista de Mensagens */}
       <div className="space-y-3 flex-1 overflow-y-auto max-h-[380px] pr-1">
         {visibleComments.length === 0 ? (
@@ -65,14 +98,14 @@ export const TicketChat: React.FC<TicketChatProps> = ({ chamadoId, comentarios =
                   isInternal
                     ? 'bg-amber-950/30 border-amber-500/40 text-amber-200'
                     : isMe
-                    ? 'bg-sky-950/40 border-sky-500/30 text-slate-200 ml-4'
+                    ? 'bg-emerald-950/40 border-emerald-500/30 text-slate-200 ml-4'
                     : 'bg-slate-900/80 border-slate-800 text-slate-200 mr-4'
                 }`}
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <span className="font-semibold text-slate-100">
-                      {comment.usuario?.nome || (isMe ? user?.nome : 'Suporte JRBTC-TECH')}
+                      {comment.usuario?.nome || (isMe ? user?.nome : 'Suporte JRBC TECH')}
                     </span>
                     {isInternal && (
                       <span className="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold text-[10px] border border-amber-500/40 flex items-center gap-1">
@@ -105,7 +138,7 @@ export const TicketChat: React.FC<TicketChatProps> = ({ chamadoId, comentarios =
                 onClick={() => setVisibilidade('CLIENTE')}
                 className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold flex items-center gap-1.5 transition-colors ${
                   visibilidade === 'CLIENTE'
-                    ? 'bg-sky-500/20 text-sky-300 border border-sky-500/40'
+                    ? 'bg-emerald-500/20 text-[#00e676] border border-emerald-500/40'
                     : 'text-slate-400 hover:text-slate-200'
                 }`}
               >
@@ -136,14 +169,14 @@ export const TicketChat: React.FC<TicketChatProps> = ({ chamadoId, comentarios =
                 : 'Escreva uma mensagem para o cliente/solicitante...'
             }
             rows={2}
-            className="flex-1 bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500 resize-none transition-colors"
+            className="flex-1 bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:border-[#00e676] resize-none transition-colors"
           />
           <button
             type="submit"
             disabled={!mensagem.trim() || isSending}
-            className="h-[58px] px-4 rounded-xl bg-gradient-to-tr from-sky-500 to-cyan-500 hover:from-sky-400 hover:to-cyan-400 disabled:opacity-50 text-white font-bold text-xs shadow-glow-cyan flex items-center justify-center gap-1.5 transition-all"
+            className="h-[58px] px-4 rounded-xl bg-gradient-to-tr from-[#00e676] to-emerald-500 hover:from-emerald-400 hover:to-emerald-500 disabled:opacity-50 text-slate-950 font-extrabold text-xs shadow-md flex items-center justify-center gap-1.5 transition-all"
           >
-            <Send className="w-4 h-4" />
+            <Send className="w-4 h-4 fill-slate-950" />
           </button>
         </div>
       </form>

@@ -22,7 +22,7 @@ export default function FinanceiroPage() {
       <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4 text-center p-6">
         <AlertCircle className="w-12 h-12 text-rose-400" />
         <h2 className="font-bold text-white text-lg">Acesso Restrito</h2>
-        <p className="text-slate-400 text-sm">Módulo financeiro exclusivo para administradores JRBTC-TECH.</p>
+        <p className="text-slate-400 text-sm">Módulo financeiro exclusivo para administradores JRBC TECH.</p>
       </div>
     );
   }
@@ -68,7 +68,7 @@ export default function FinanceiroPage() {
           <p className="text-[10px] text-slate-500">{pagosEFinalizados.length} chamados pagos</p>
         </div>
         <div className="p-5 rounded-2xl bg-violet-950/30 border border-violet-500/30 space-y-2">
-          <p className="text-[11px] text-slate-400 font-bold uppercase flex items-center gap-1.5"><Building2 className="w-3.5 h-3.5 text-violet-400" /> Taxa JRBTC (30%)</p>
+          <p className="text-[11px] text-slate-400 font-bold uppercase flex items-center gap-1.5"><Building2 className="w-3.5 h-3.5 text-violet-400" /> Taxa JRBC TECH (30%)</p>
           <p className="text-2xl font-extrabold text-violet-400">{formatCurrency(taxaEmpresa)}</p>
           <p className="text-[10px] text-slate-500">Receita operacional</p>
         </div>
@@ -112,7 +112,7 @@ export default function FinanceiroPage() {
                 <th className="text-left py-3 px-3 text-[10px] font-bold text-slate-400 uppercase hidden sm:table-cell">Cliente</th>
                 <th className="text-left py-3 px-3 text-[10px] font-bold text-slate-400 uppercase hidden md:table-cell">Técnico</th>
                 <th className="text-right py-3 px-3 text-[10px] font-bold text-slate-400 uppercase">Valor Pago</th>
-                <th className="text-right py-3 px-3 text-[10px] font-bold text-violet-400 uppercase hidden sm:table-cell">JRBTC 30%</th>
+                <th className="text-right py-3 px-3 text-[10px] font-bold text-violet-400 uppercase hidden sm:table-cell">JRBC TECH 30%</th>
                 <th className="text-right py-3 px-3 text-[10px] font-bold text-cyan-400 uppercase">Técnico 70%</th>
                 <th className="text-center py-3 px-3 text-[10px] font-bold text-slate-400 uppercase">Ação</th>
               </tr>
@@ -172,7 +172,7 @@ export default function FinanceiroPage() {
           <div className="p-4 border-t border-slate-800 bg-slate-900/60 flex flex-wrap gap-4 justify-end text-xs font-bold">
             <span className="text-slate-400">Total filtrado:</span>
             <span className="text-emerald-400">{formatCurrency(filtered.reduce((a, c) => a + (c.valor_pago || c.valor_servico || 0), 0))}</span>
-            <span className="text-violet-400 hidden sm:inline">JRBTC: {formatCurrency(filtered.reduce((a, c) => a + (c.taxa_empresa || (c.valor_servico || 0) * 0.30), 0))}</span>
+            <span className="text-violet-400 hidden sm:inline">JRBC TECH: {formatCurrency(filtered.reduce((a, c) => a + (c.taxa_empresa || (c.valor_servico || 0) * 0.30), 0))}</span>
             <span className="text-cyan-400">Técnicos: {formatCurrency(filtered.reduce((a, c) => a + (c.valor_tecnico || (c.valor_servico || 0) * 0.70), 0))}</span>
           </div>
         )}

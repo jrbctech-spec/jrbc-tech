@@ -48,7 +48,7 @@ export const ServiceOrderPDFModal: React.FC<ServiceOrderPDFModalProps> = ({
         tecnico: tecnico || chamado.tecnico_responsavel,
       });
 
-      doc.save(`OS_JRBTC_${chamado.numero_chamado}.pdf`);
+      doc.save(`OS_JRBC TECH_${chamado.numero_chamado}.pdf`);
     } catch (err) {
       console.error('Erro ao gerar PDF:', err);
     } finally {
@@ -83,7 +83,7 @@ export const ServiceOrderPDFModal: React.FC<ServiceOrderPDFModalProps> = ({
                   {chamado.numero_chamado}
                 </span>
               </h3>
-              <p className="text-[11px] text-slate-400">JRBTC-TECH Soluções em TI</p>
+              <p className="text-[11px] text-slate-400">JRBC TECH Soluções em TI</p>
             </div>
           </div>
 
@@ -119,9 +119,9 @@ export const ServiceOrderPDFModal: React.FC<ServiceOrderPDFModalProps> = ({
           {/* Cabeçalho da Empresa */}
           <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <h2 className="text-lg font-extrabold text-sky-400">JRBTC-TECH</h2>
+              <h2 className="text-lg font-extrabold text-sky-400">JRBC TECH</h2>
               <p className="text-xs text-slate-300">Soluções em Tecnologia da Informação</p>
-              <p className="text-[11px] text-slate-400">CNPJ: 45.123.456/0001-89 | Tel: (63) 98121-3180</p>
+              <p className="text-[11px] text-slate-400">CNPJ: 65.488.003/0001-61 | Tel: (63) 98121-3180</p>
             </div>
             <div className="text-left sm:text-right">
               <span className="inline-block px-3 py-1 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-xs font-bold">
@@ -172,7 +172,7 @@ export const ServiceOrderPDFModal: React.FC<ServiceOrderPDFModalProps> = ({
               <CheckCircle2 className="w-3.5 h-3.5" /> Solução Técnica Aplicada
             </h4>
             <p className="text-xs text-slate-200 leading-relaxed">
-              {chamado.solucao || 'Serviço executado com sucesso e validado pela equipe técnica de TI da JRBTC-TECH.'}
+              {chamado.solucao || 'Serviço executado com sucesso e validado pela equipe técnica de TI da JRBC TECH.'}
             </p>
           </div>
 
@@ -199,7 +199,7 @@ export const ServiceOrderPDFModal: React.FC<ServiceOrderPDFModalProps> = ({
             <div className="grid grid-cols-2 gap-8 text-center pt-2">
               <div>
                 <div className="w-full border-b border-slate-700 mb-2"></div>
-                <p className="font-bold text-slate-200 text-xs">JRBTC-TECH</p>
+                <p className="font-bold text-slate-200 text-xs">JRBC TECH</p>
                 <p className="text-[10px] text-slate-500">Técnico Responsável</p>
               </div>
               <div>

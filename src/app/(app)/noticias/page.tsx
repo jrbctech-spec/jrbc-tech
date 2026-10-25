@@ -23,7 +23,7 @@ export default function NoticiasPage() {
       resumo,
       texto,
       imagem_url: imagemUrl || 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80',
-      autor: 'Equipe JRBTC-TECH',
+      autor: 'Equipe JRBC TECH',
       data_publicacao: new Date().toISOString(),
       ativo: true,
     });
@@ -103,7 +103,7 @@ export default function NoticiasPage() {
               </div>
 
               <div className="pt-4 border-t border-slate-800/80 text-[11px] text-sky-400 flex items-center gap-1 font-semibold">
-                <ShieldAlert className="w-3.5 h-3.5" /> Informação homologada pela JRBTC-TECH
+                <ShieldAlert className="w-3.5 h-3.5" /> Informação homologada pela JRBC TECH
               </div>
             </div>
           </article>
