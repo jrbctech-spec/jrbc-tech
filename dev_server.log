@@ -14,3 +14,20 @@
  GET / 200 in 74ms
  ○ Compiling /login ...
  ✓ Compiled /login in 921ms (664 modules)
+ ✓ Compiled in 3.6s (347 modules)
+ ✓ Compiled in 339ms (347 modules)
+ ✓ Compiled in 1219ms (347 modules)
+ ○ Compiling / ...
+ ✓ Compiled / in 1152ms (662 modules)
+ GET / 200 in 1636ms
+ ✓ Compiled /_not-found in 289ms (665 modules)
+ GET /_next/static/css/app/layout.css?v=1792943929282 404 in 477ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 466ms
+ GET /_next/static/chunks/main-app.js?v=1792943929282 404 in 470ms
+ GET /_next/static/chunks/app/page.js 404 in 470ms
+ ✓ Compiled /login in 147ms (339 modules)
+ GET /login 200 in 302ms
+ GET /_next/static/css/app/layout.css?v=1792943932359 404 in 53ms
+ GET /_next/static/chunks/main-app.js?v=1792943932359 404 in 79ms
+ GET /_next/static/chunks/app/login/page.js 404 in 79ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 82ms

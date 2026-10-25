@@ -8,7 +8,8 @@ import {
   Monitor, Server, Database, Layers, Shield, Zap, Clock, Star,
   ArrowRight, CheckCircle2, Phone, Mail, Menu, X, LogIn,
   Newspaper, ChevronRight, Award, Users, FileText, Headphones,
-  MapPin, Activity, CheckSquare, ExternalLink, Download, FileCheck, Lock
+  MapPin, Activity, CheckSquare, ExternalLink, Download, FileCheck, Lock,
+  MessageSquare
 } from 'lucide-react';
 import { formatDate } from '@/lib/utils';
 
@@ -20,7 +21,7 @@ export default function LandingPage() {
   const publicNoticias = noticias.filter(n => n.ativo).slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-[#05080f] text-slate-100 overflow-x-hidden font-sans selection:bg-[#00e676]/30 selection:text-[#00e676]">
+    <div className="min-h-screen bg-[#05080f] text-slate-100 overflow-x-hidden font-sans selection:bg-[#00e676]/30 selection:text-[#00e676] relative">
 
       {/* ====== HEADER PÚBLICO EXECUTIVO ====== */}
       <header className="sticky top-0 z-50 border-b border-emerald-950/40 bg-[#05080f]/90 backdrop-blur-md">
@@ -388,6 +389,22 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+
+      {/* ====== WIDGET FLUTUANTE DE WHATSAPP / SUPORTE RÁPIDO ====== */}
+      <a
+        href="https://wa.me/5563981213180?text=Ol%C3%A1!%20Gostaria%20de%20suporte%20t%C3%A9cnico%20da%20JRBC%20TECH."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs shadow-[0_0_25px_rgba(0,230,118,0.5)] transition-all hover:scale-105 group"
+        aria-label="Atendimento via WhatsApp"
+      >
+        <span className="relative flex h-3 w-3">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-950 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-3 w-3 bg-slate-950"></span>
+        </span>
+        <MessageSquare className="w-5 h-5 fill-slate-950" />
+        <span className="hidden sm:inline font-extrabold uppercase tracking-wide">Atendimento WhatsApp</span>
+      </a>
 
       {/* ====== FOOTER OFICIAL ====== */}
       <footer className="border-t border-slate-900 py-10 px-4 sm:px-6 bg-[#03050a]">
