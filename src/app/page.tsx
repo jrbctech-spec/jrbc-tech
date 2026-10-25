@@ -9,7 +9,7 @@ import {
   ArrowRight, CheckCircle2, Phone, Mail, Menu, X, LogIn,
   Newspaper, ChevronRight, Award, Users, FileText, Headphones,
   MapPin, Activity, CheckSquare, ExternalLink, Download, FileCheck, Lock,
-  MessageSquare
+  MessageSquare, UserCheck, Briefcase, Cpu, Bot, Sparkles, Building, Rocket
 } from 'lucide-react';
 import { formatDate } from '@/lib/utils';
 
@@ -44,10 +44,10 @@ export default function LandingPage() {
           {/* MENU NAVEGAÇÃO DEKTOP */}
           <nav className="hidden lg:flex items-center gap-6 text-xs font-semibold text-slate-300">
             <a href="#sobre" className="hover:text-[#00e676] transition-colors">A JRBC Tech</a>
+            <a href="#saas-produtos" className="hover:text-[#00e676] transition-colors">Produtos & SaaS</a>
+            <a href="#alocacao" className="hover:text-[#00e676] transition-colors">Alocação de Profissionais</a>
+            <a href="#ia-sistemas" className="hover:text-[#00e676] transition-colors">Sistemas por IA</a>
             <a href="#servicos" className="hover:text-[#00e676] transition-colors">Serviços</a>
-            <a href="#experiencia" className="hover:text-[#00e676] transition-colors">Experiência</a>
-            <a href="#clientes" className="hover:text-[#00e676] transition-colors">Grandes Clientes</a>
-            <a href="#certificacoes" className="hover:text-[#00e676] transition-colors">Certificações</a>
             <a href="#compliance" className="hover:text-[#00e676] transition-colors">Compliance B2B</a>
             <a href="#contato" className="hover:text-[#00e676] transition-colors">Contato</a>
           </nav>
@@ -90,10 +90,10 @@ export default function LandingPage() {
           </div>
           <nav className="flex flex-col gap-4 py-6 text-base font-bold text-slate-200">
             <a href="#sobre" onClick={() => setMobileMenuOpen(false)} className="py-2.5 border-b border-slate-800/60">A JRBC Tech</a>
+            <a href="#saas-produtos" onClick={() => setMobileMenuOpen(false)} className="py-2.5 border-b border-slate-800/60">Produtos & SaaS</a>
+            <a href="#alocacao" onClick={() => setMobileMenuOpen(false)} className="py-2.5 border-b border-slate-800/60">Alocação de Profissionais</a>
+            <a href="#ia-sistemas" onClick={() => setMobileMenuOpen(false)} className="py-2.5 border-b border-slate-800/60">Sistemas por IA</a>
             <a href="#servicos" onClick={() => setMobileMenuOpen(false)} className="py-2.5 border-b border-slate-800/60">Serviços</a>
-            <a href="#experiencia" onClick={() => setMobileMenuOpen(false)} className="py-2.5 border-b border-slate-800/60">Experiência</a>
-            <a href="#clientes" onClick={() => setMobileMenuOpen(false)} className="py-2.5 border-b border-slate-800/60">Grandes Clientes</a>
-            <a href="#certificacoes" onClick={() => setMobileMenuOpen(false)} className="py-2.5 border-b border-slate-800/60">Certificações</a>
             <a href="#compliance" onClick={() => setMobileMenuOpen(false)} className="py-2.5 border-b border-slate-800/60">Compliance B2B</a>
             <a href="#contato" onClick={() => setMobileMenuOpen(false)} className="py-2.5 border-b border-slate-800/60">Contato</a>
           </nav>
@@ -112,42 +112,206 @@ export default function LandingPage() {
 
           <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-emerald-950/60 border border-[#00e676]/40 text-xs font-extrabold text-[#00e676] shadow-inner">
             <span className="w-2.5 h-2.5 rounded-full bg-[#00e676] animate-ping" />
-            ENGENHARIA DE SUPORTE & GOVERNANÇA ITSM • FOCO ZERO DOWNTIME
+            PLATAFORMA SAAS & INFRAESTRUTURA DE TI PARA ÓRGÃOS PÚBLICOS E EMPRESAS PRIVADAS
           </div>
 
           <h1 className="font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight max-w-5xl mx-auto text-white">
-            Sustentação de TI de Missão Crítica &{' '}
+            Soluções SaaS, Nomeação de Profissionais &{' '}
             <span className="bg-gradient-to-r from-[#00e676] via-emerald-300 to-[#d4af37] bg-clip-text text-transparent">
-              Field Service Especializado
+              Sistemas Guiados por Inteligência Artificial
             </span>
           </h1>
 
           <p className="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
-            A <strong className="text-white">JRBC TECH TECNOLOGIA LTDA</strong> atua na gestão avançada de infraestrutura de TI corporativa, suporte N1/N2/N3, manutenção em servidores Dell, switches Cisco e continuidade operacional 24/7 com cumprimento rigoroso de SLA em Palmas - TO e região.
+            A <strong className="text-white">JRBC TECH TECNOLOGIA LTDA</strong> oferece contratação direta de produtos de infraestrutura, nomeação de engenheiros de TI alocados e plataformas SaaS com copiloto de IA para gestão de chamados, manutenção preditiva e suporte de missão crítica.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Link href="/login" className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-[#00e676] to-emerald-500 hover:from-emerald-400 hover:to-emerald-500 text-slate-950 font-extrabold text-base shadow-[0_0_25px_rgba(0,230,118,0.35)] flex items-center justify-center gap-2.5 transition-all min-h-[56px]">
               <FileText className="w-5 h-5 fill-slate-950" /> Portal de Chamados / Área do Cliente
             </Link>
-            <a href="#contato" className="w-full sm:w-auto px-8 py-4 rounded-2xl border border-slate-700 hover:border-[#00e676] bg-slate-900/60 text-slate-200 hover:text-white font-bold text-base flex items-center justify-center gap-2 transition-all min-h-[56px]">
-              Solicitar Proposta B2B <ChevronRight className="w-5 h-5 text-[#00e676]" />
+            <a href="#saas-produtos" className="w-full sm:w-auto px-8 py-4 rounded-2xl border border-slate-700 hover:border-[#00e676] bg-slate-900/60 text-slate-200 hover:text-white font-bold text-base flex items-center justify-center gap-2 transition-all min-h-[56px]">
+              Ver Produtos & Catálogo SaaS <ChevronRight className="w-5 h-5 text-[#00e676]" />
             </a>
           </div>
 
           {/* Destaques Rápidos */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-12 max-w-4xl mx-auto">
             {[
-              { val: '+20 Anos', lbl: 'Experiência Corporativa' },
-              { val: 'N1 / N2 / N3', lbl: 'Suporte Multinível' },
-              { val: '99.9%', lbl: 'SLA Disponibilidade' },
-              { val: 'ITIL v4', lbl: 'Governança & Processos' },
+              { val: 'Contratos B2B', lbl: 'Órgãos Públicos & Privados' },
+              { val: 'Staffing TI', lbl: 'Nomeação de Especialistas' },
+              { val: 'AI Copilot', lbl: 'Automação de Sistemas' },
+              { val: '99.9%', lbl: 'Uptime & SLA Garantido' },
             ].map(st => (
               <div key={st.lbl} className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800/80 backdrop-blur-sm">
                 <p className="text-2xl sm:text-3xl font-extrabold text-[#00e676]">{st.val}</p>
                 <p className="text-xs text-slate-400 font-semibold mt-1">{st.lbl}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ====== SEÇÃO NOX: MÓDULO SAAS & PRODUTOS CORPORATIVOS ====== */}
+      <section id="saas-produtos" className="py-20 px-4 sm:px-6 bg-slate-950/80 border-t border-slate-900">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <div className="text-center space-y-3">
+            <div className="inline-flex items-center gap-2 text-xs font-bold text-[#00e676] uppercase tracking-widest">
+              <Rocket className="w-4 h-4" /> Ecossistema SaaS JRBC TECH
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Catálogo de Produtos & Soluções Contratáveis</h2>
+            <p className="text-slate-400 text-sm max-w-2xl mx-auto">
+              Contrate produtos de infraestrutura de TI como serviço (SaaS), com licenciamento flexível, suporte presencial e monitoramento inteligente.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-8 rounded-3xl bg-slate-900/90 border border-emerald-500/30 hover:border-[#00e676] transition-all space-y-6 flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="w-12 h-12 rounded-2xl bg-emerald-950/80 border border-[#00e676]/40 flex items-center justify-center text-[#00e676]">
+                  <Cpu className="w-6 h-6" />
+                </div>
+                <h3 className="font-extrabold text-xl text-white">JRBC ServiceDesk SaaS</h3>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Plataforma PWA completa de abertura e controle de chamados com protocolo sequencial, assinatura digital em PDF e notificações automáticas.
+                </p>
+                <ul className="space-y-2 text-xs text-slate-300 pt-2">
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#00e676]" /> Relatórios de SLA em Tempo Real</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#00e676]" /> Ordens de Serviço em PDF com Assinatura</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#00e676]" /> Multi-Perfil (Admin, Técnico, Cliente)</li>
+                </ul>
+              </div>
+              <Link href="/login" className="w-full py-3 rounded-xl bg-[#00e676] hover:bg-emerald-400 text-slate-950 font-extrabold text-xs text-center block shadow-md uppercase tracking-wider">
+                Contratar para Empresa
+              </Link>
+            </div>
+
+            <div className="p-8 rounded-3xl bg-slate-900/90 border border-emerald-500/30 hover:border-[#00e676] transition-all space-y-6 flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="w-12 h-12 rounded-2xl bg-emerald-950/80 border border-[#00e676]/40 flex items-center justify-center text-[#00e676]">
+                  <Server className="w-6 h-6" />
+                </div>
+                <h3 className="font-extrabold text-xl text-white">Sustentação de Datacenter SaaS</h3>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Sustentação proativa de servidores Dell PowerEdge, storage em nuvem corporativa e switches de núcleo Cisco com tempo de resposta garantido.
+                </p>
+                <ul className="space-y-2 text-xs text-slate-300 pt-2">
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#00e676]" /> Monitoramento Zabbix & Grafana 24/7</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#00e676]" /> Gestão de Discos Hot-Swap e RAID</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#00e676]" /> Backup Automatizado & Disaster Recovery</li>
+                </ul>
+              </div>
+              <a href="#contato" className="w-full py-3 rounded-xl border border-slate-700 hover:border-[#00e676] text-white font-extrabold text-xs text-center block uppercase tracking-wider">
+                Solicitar Cotação B2B
+              </a>
+            </div>
+
+            <div className="p-8 rounded-3xl bg-slate-900/90 border border-emerald-500/30 hover:border-[#00e676] transition-all space-y-6 flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="w-12 h-12 rounded-2xl bg-emerald-950/80 border border-[#00e676]/40 flex items-center justify-center text-[#00e676]">
+                  <Bot className="w-6 h-6" />
+                </div>
+                <h3 className="font-extrabold text-xl text-white">Sistemas Manuseados por IA</h3>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Assistente de diagnóstico avançado treinado para apoio a chamados técnicos, análise de erros em bancos de dados e copiloto de TI.
+                </p>
+                <ul className="space-y-2 text-xs text-slate-300 pt-2">
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#00e676]" /> Integração Meta AI & LLMs</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#00e676]" /> Diagnóstico Prévio Automático</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#00e676]" /> Análise de Inconsistências de Rede</li>
+                </ul>
+              </div>
+              <Link href="/login" className="w-full py-3 rounded-xl bg-gradient-to-r from-[#00e676] to-emerald-500 hover:from-emerald-400 hover:to-emerald-500 text-slate-950 font-extrabold text-xs text-center block shadow-md uppercase tracking-wider">
+                Acessar Copiloto de IA
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ====== SEÇÃO NOMEAÇÃO E ALOCAÇÃO DE PROFISSIONAIS ====== */}
+      <section id="alocacao" className="py-20 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto space-y-12">
+          <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-slate-900 via-[#05080f] to-slate-950 border border-emerald-950 shadow-2xl space-y-8">
+            <div className="max-w-3xl space-y-4">
+              <div className="inline-flex items-center gap-2 text-xs font-bold text-[#d4af37] uppercase tracking-widest">
+                <UserCheck className="w-4 h-4" /> Nomeação & Staffing Especializado
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+                Contratação de Profissionais de TI por Nomeação e Alocação Dedicada
+              </h2>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                Oferecemos a nomeação formal de engenheiros, analistas de redes N3 e especialistas em infraestrutura de TI para atuação presencial ou remota em **Órgãos Públicos** (via licitação, dispensa ou contrato público) e **Empresas Privadas**.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
+                <Building className="w-8 h-8 text-[#00e676]" />
+                <h3 className="font-bold text-base text-white">Órgãos Públicos</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Atendimento integral a termos de referência, portarias de nomeação técnica e editais públicos com compliance B2B.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
+                <Briefcase className="w-8 h-8 text-[#00e676]" />
+                <h3 className="font-bold text-base text-white">Empresas Privadas & Integradoras</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Alocação de especialistas certificados em Cisco, Dell e Linux para projetos corporativos e sustentação temporária.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
+                <Award className="w-8 h-8 text-[#d4af37]" />
+                <h3 className="font-bold text-base text-white">Técnicos Certificados N1, N2 e N3</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Corpo técnico capacitado e pronto para assumir demandas de campo com acompanhamento por Ordem de Serviço em PDF.
+                </p>
+              </div>
+            </div>
+
+            <div className="pt-4 flex flex-col sm:flex-row items-center gap-4 border-t border-slate-800/80">
+              <a href="https://wa.me/5563981213180?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20a%20nomea%C3%A7%C3%A3o%2Faloca%C3%A7%C3%A3o%20de%20um%20profissional%20de%20TI." target="_blank" rel="noreferrer" className="px-6 py-3.5 rounded-xl bg-[#00e676] hover:bg-emerald-400 text-slate-950 font-extrabold text-xs flex items-center gap-2 shadow-md uppercase tracking-wider">
+                <Phone className="w-4 h-4 fill-slate-950" /> Solicitar Nomeação Profissional
+              </a>
+              <a href="mailto:contato@jrbctech.com.br" className="px-6 py-3.5 rounded-xl border border-slate-700 hover:border-[#00e676] text-slate-200 font-extrabold text-xs flex items-center gap-2">
+                <Mail className="w-4 h-4 text-[#00e676]" /> Enviar Termo de Referência
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ====== SEÇÃO SISTEMAS MANUSEADOS POR IA ====== */}
+      <section id="ia-sistemas" className="py-20 px-4 sm:px-6 bg-slate-950/70 border-t border-slate-900">
+        <div className="max-w-6xl mx-auto space-y-12">
+          <div className="text-center space-y-3">
+            <div className="inline-flex items-center gap-2 text-xs font-bold text-[#00e676] uppercase tracking-widest">
+              <Sparkles className="w-4 h-4" /> Inteligência Artificial Aplicada a TI
+            </div>
+            <h2 className="text-3xl font-extrabold text-white">Manuseio de Sistemas e Suporte Guiados por IA</h2>
+            <p className="text-slate-400 text-sm max-w-2xl mx-auto">
+              Nossa plataforma combina a expertise humana da equipe técnica com algoritmos de Meta AI e LLMs para diagnósticos ultra-rápidos e redução do tempo de parada.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-4">
+              <Bot className="w-10 h-10 text-[#00e676]" />
+              <h3 className="font-extrabold text-lg text-white">Copiloto no Chat de Atendimento</h3>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Técnicos e clientes têm acesso ao assistente **Meta AI** integrado diretamente no chat dos chamados (`/chamados/[id]`), gerando sugestões imediatas de resolução técnica e comandos de rede.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-4">
+              <Activity className="w-10 h-10 text-[#00e676]" />
+              <h3 className="font-extrabold text-lg text-white">Análise Preditiva de Falhas</h3>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Algoritmos que analisam históricos de chamados e falhas recorrentes em servidores, sugerindo upgrades antes mesmo que uma interrupção crítica ocorra.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -245,66 +409,8 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ====== EXPERIÊNCIA & INFRAESTRUTURA ====== */}
-      <section id="experiencia" className="py-20 px-4 sm:px-6 bg-slate-950/70 border-t border-slate-900">
-        <div className="max-w-6xl mx-auto space-y-12">
-          <div className="text-center space-y-3">
-            <div className="inline-flex items-center gap-2 text-xs font-bold text-[#d4af37] uppercase tracking-widest">
-              <Award className="w-4 h-4" /> Experiência Prática
-            </div>
-            <h2 className="text-3xl font-extrabold text-white">Casos de Sucesso em Ambientes Críticos</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-3">
-              <span className="text-xs font-bold text-[#00e676] uppercase">Operação Aeroportuária • CCR Aeroportos</span>
-              <h3 className="font-bold text-base text-white">Sustentação de TI no Aeroporto de Palmas (PMW)</h3>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                Atuação no suporte presencial a sistemas críticos de navegação, painéis de voo (FIDS), rede corporativa e infraestrutura do terminal aeroportuário com tolerância zero a falhas.
-              </p>
-            </div>
-            <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-3">
-              <span className="text-xs font-bold text-[#00e676] uppercase">Órgão Público • Justiça Federal - Seção Judiciária do TO</span>
-              <h3 className="font-bold text-base text-white">Suporte N3 a Servidores & Rede Judiciária</h3>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                Manutenção contínua do parque tecnológico, switches de núcleo, servidores de dados e estações de trabalho de magistrados e servidores federais.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ====== GRANDES CLIENTES ====== */}
-      <section id="clientes" className="py-20 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto space-y-12">
-          <div className="text-center space-y-3">
-            <div className="inline-flex items-center gap-2 text-xs font-bold text-[#00e676] uppercase tracking-widest">
-              <Users className="w-4 h-4" /> Relacionamento B2B
-            </div>
-            <h2 className="text-3xl font-extrabold text-white">Empresas e Instituições Atendidas</h2>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {[
-              'CCR Aeroportos',
-              'Justiça Federal TO',
-              'Governo do Estado do TO',
-              'Prefeitura de Palmas',
-              'Empresas do Comércio & Varejo',
-              'Bancos e Cooperativas de Crédito',
-              'Escritórios de Advocacia e Contabilidade',
-              'Clínicas e Hospitais Privados',
-            ].map(client => (
-              <div key={client} className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/80 text-center flex items-center justify-center font-bold text-xs text-slate-200 hover:border-[#00e676]/40 transition-colors">
-                {client}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ====== CERTIFICAÇÕES & COMPLIANCE ====== */}
-      <section id="certificacoes" className="py-20 px-4 sm:px-6 bg-slate-950/70 border-t border-slate-900">
+      {/* ====== COMPLIANCE B2B ====== */}
+      <section id="compliance" className="py-20 px-4 sm:px-6 bg-slate-950/70 border-t border-slate-900">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 text-xs font-bold text-[#00e676] uppercase tracking-widest">
@@ -322,7 +428,7 @@ export default function LandingPage() {
             </ul>
           </div>
 
-          <div id="compliance" className="space-y-6">
+          <div className="space-y-6">
             <div className="inline-flex items-center gap-2 text-xs font-bold text-[#d4af37] uppercase tracking-widest">
               <FileCheck className="w-4 h-4" /> Governança B2B
             </div>
